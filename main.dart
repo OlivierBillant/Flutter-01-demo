@@ -37,17 +37,21 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+            leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu))),
         body: Center(
             child: Column(
-      children: [
-        const Text("Hello World"),
-        ElevatedButton(
-            child: Text("BUTTON"),
-            onPressed: () {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text("Guess we clicked")));
-            })
-      ],
-    )));
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Hello World"),
+            ElevatedButton(
+                child: Text("BUTTON"),
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Guess we clicked")));
+                })
+          ],
+        )));
   }
 }
+
